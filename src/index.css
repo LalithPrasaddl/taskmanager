@@ -1,13 +1,69 @@
 body {
+  font-family: Avenir;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+button {
+  cursor: pointer;
+  background: transparent;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button, input, select {
+  font-family: Avenir;
+  outline: 0;
+}
+
+button:disabled {
+  opacity: .25;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.bg-black {
+  background: #000;
+}
+
+.bg-white {
+  background: #FFF;
+}
+
+.bg-primary {
+  background: #000;
+}
+
+.bg-secondary {
+  background: whitesmoke;
+}
+
+.color-black {
+  color: #000;
+}
+
+.color-white {
+  color: #FFF;
+}
+
+.color-primary {
+  color: #FFF;
+}
+
+.color-red {
+  color: red;
+}
+
+.border-black {
+  border-color: #000;
+}
+
+.border-white {
+  border-color: #FFF;
+}
+
+.border-primary {
+  border-color: #000;
+}
+
+.text-center {
+  text-align: center;
 }
