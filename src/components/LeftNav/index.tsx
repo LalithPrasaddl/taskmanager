@@ -53,6 +53,12 @@ function LeftNav({
       modalScreen: 'OPEN_SETTINGS'
     })
   }
+  function openArchive() {
+    setModal({
+      showModal: true,
+      modalScreen: 'OPEN_ARCHIVE'
+    })
+  }
   return (
     <div className="left-nav-wrapper border-black">
       <div>
@@ -78,7 +84,8 @@ function LeftNav({
           }
         </div>
       </div>
-      <div>
+      <div className="left-nav-bottom-section">
+        <button className="bg-black color-white border-black settings-btn" onClick={openArchive}>Archive</button>
         <button className="bg-white color-black border-black settings-btn" onClick={openSettings}>Settings</button>
       </div>
     </div>

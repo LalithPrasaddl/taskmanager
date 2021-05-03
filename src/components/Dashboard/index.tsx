@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 import { RootState } from "../../store";
 import {setModal} from "../../store/modalSlice";
 import {deleteTask, updateTaskStatus, taskItemToEdit} from "../../store/taskSlice";
-import { taskOptions} from "../../utils/helper";
+import { taskOptions, ARCHIVE} from "../../utils/helper";
+import Task from "../Task"
 
 const mapStateToProps = (state:RootState) => ({
   selectedTaskGroup: state.task.selectedTaskGroup,
@@ -38,8 +39,6 @@ function Dashboard({
   taskGroups = {},
   tasks = {},
   setModal,
-  deleteTask,
-  updateTaskStatus,
   taskItemToEdit,
   people,
   nickname
@@ -47,25 +46,6 @@ function Dashboard({
   const [selFilter, setSelFilter] = useState('')
   const [selFilterItem, setSelFilterItem] = useState('')
   const currTasks = tasks[selectedTaskGroup]
-
-  function deleteItem(itemId:string) {
-    deleteTask(itemId)
-  }
-
-  function editItem(itemId:string) {
-    taskItemToEdit(currTasks[itemId])
-    setModal({
-      showModal: true,
-      modalScreen: 'ADD_TASK'
-    })
-  }
-
-  function updateStatus(taskId:string, status:any) {
-    updateTaskStatus({
-      taskId,
-      status: status.key
-    })
-  }
 
   function addTask() {
     setModal({
@@ -93,31 +73,18 @@ function Dashboard({
           Object.keys(currTasks).map((taskId:string) => {
             const task = currTasks[taskId]
             const nextTask = taskOptions.status[key + 1]
+            const nextTaskName = nextTask ? nextTask.name : ARCHIVE
             const isAdd = checkStatus(task)
             if(statusKey === task.status && isAdd) {
               return (
-                <div key={taskId} className="task-item-wrapper">
-                  <h5 className="bg-primary color-white title border-primary">
-                    <span>{task.title}</span>
-                    <span>{task.curr_assignee}</span>
-                  </h5>
-                  <div className="task-item-content">{task.desc}</div>
-                  <div className="task-item-info bg-primary color-white border-white">
-                    <div className="border-white">{task.priority}</div>
-                    <div className="border-white">{task.type}</div>
-                    <div>{task.finish_date}</div>
-                  </div>
-                  {
-                    nextTask &&
-                    <div className="task-item-move">
-                      <button onClick={() => updateStatus(taskId, nextTask)} className="bg-primary color-white">Move to <b>{nextTask.name}</b></button>
-                    </div>
-                  }
-                  <div className="task-item-actions">
-                    <button onClick={() => deleteItem(taskId)}>Delete</button>
-                    <button onClick={() => editItem(taskId)}>Edit</button>
-                  </div>
-                </div>
+                <Task
+                  key={taskId}
+                  task={task}
+                  taskId={taskId}
+                  nextTask={nextTask}
+                  nextTaskName={nextTaskName}
+                  page="dashboard"
+                 />
               )
             }
             return null

@@ -1,3 +1,5 @@
+export const ARCHIVE = 'Archive'
+export const NOT_STARTED = 'not_started'
 export const taskOptions:any = {
   type: [{
     key: 'task',

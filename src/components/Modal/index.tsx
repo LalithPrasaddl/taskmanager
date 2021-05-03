@@ -7,6 +7,7 @@ import {setModal} from '../../store/modalSlice'
 import AddTask from '../AddTask'
 import AddTaskGroup from '../AddTaskGroup'
 import OpenSettings from '../OpenSettings'
+import OpenArchive from '../OpenArchive'
 
 const mapStateToProps = (state:RootState) => ({
   modalScreen: state.modal.modalScreen,
@@ -52,6 +53,8 @@ function Modal({
         return <AddTask />
       case 'OPEN_SETTINGS':
         return <OpenSettings />
+      case 'OPEN_ARCHIVE':
+        return <OpenArchive />
       default:
         return null
     }
@@ -65,14 +68,20 @@ function Modal({
         return selectedTaskItemToEdit ? 'View/Edit Task' : 'Add Task'
       case 'OPEN_SETTINGS':
         return 'Settings'
+      case 'OPEN_ARCHIVE':
+        return 'Archive'
       default:
         return null
     }
   }
 
+  let modalClass = 'modal-section border-black bg-white'
+  if(modalScreen === 'OPEN_ARCHIVE') {
+    modalClass += ' modal-full'
+  }
   return (
     <div className="modal-wrapper bg-black">
-      <div className="modal-section border-black bg-white" onClick={(e) => e.stopPropagation()}>
+      <div className={modalClass} onClick={(e) => e.stopPropagation()}>
         <h2 className="title">{renderTitle()}</h2>
         {renderModalContent()}
       </div>
