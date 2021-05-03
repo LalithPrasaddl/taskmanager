@@ -1,0 +1,72 @@
+/* Header Screen START */
+header {
+  position: sticky;
+  top: 0;
+}
+
+header h2 {
+  padding: .75rem;
+  margin: 0;
+  text-align: center;
+}
+/* Header Screen END */
+
+/* Login Screen START */
+.login-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 40vw;
+  margin: 3rem auto;
+  padding: 3rem 1rem;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0px 0px 5px 2px black;
+  border-radius: 5px;
+}
+
+.login-wrapper button {
+  padding: .5rem;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.login-wrapper .generate-btn {
+  border-radius: 5px;
+}
+
+.login-wrapper input {
+  padding: .5rem;
+  min-width: 25vw;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.login-wrapper .or {
+  padding: 3rem;
+}
+.login-wrapper .have-uuid {
+  padding-bottom: .5rem;
+}
+
+.login-wrapper .error-message {
+  padding-top: .5rem;
+}
+/* Login Screen END */
+
+/* Left Nav Screen START */
+
+/* Left Nav Screen END */
+
+/* Dashboard Screen START */
+
+/* Dashboard Screen END */
+
+/* Modal Screen START */
+
+/* Modal Screen END */
+
+/* Settings START */
+/* .settings-wrapper .name-item button { */
+/* Settings END */

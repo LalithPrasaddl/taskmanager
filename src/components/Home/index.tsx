@@ -1,6 +1,8 @@
 import LeftNav from '../LeftNav'
 import Dashboard from '../Dashboard'
 
+import './index.scss';
+
 function Home() {
 
   return (

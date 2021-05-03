@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 import { RootState } from "../../store";
 import {setModal} from "../../store/modalSlice"
 import {updateSelectedTaskGroup, setEditTaskGroup} from "../../store/taskSlice"
+import "./index.scss"
 
 const mapStateToProps = (state:RootState) => ({
-  userId: state.user.userId,
   taskGroups: state.task.taskGroups,
   selectedTaskGroup: state.task.selectedTaskGroup
 });

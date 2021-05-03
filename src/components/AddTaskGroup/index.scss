@@ -1,0 +1,29 @@
+.add-task-group-wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-item input {
+  border-radius: 5px;
+  margin: .75rem 0;
+  padding: .35rem;
+  max-width: 20vw;
+}
+
+.save-btn-wrapper {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.saveBtn {
+  padding: .5rem 1.5rem;
+  border-radius: 5px;
+}

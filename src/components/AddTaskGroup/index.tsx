@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { RootState } from "../../store";
 import {addTaskGroup, deleteTaskGroup} from "../../store/taskSlice"
 import {setModal} from "../../store/modalSlice"
+import "./index.scss";
 
 const mapStateToProps = (state:RootState) => ({
   selectedTaskGroupItemToEdit: state.task.selectedTaskGroupItemToEdit,

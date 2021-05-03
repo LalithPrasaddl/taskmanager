@@ -6,6 +6,7 @@ import {setModal} from "../../store/modalSlice";
 import {deleteTask, updateTaskStatus, taskItemToEdit} from "../../store/taskSlice";
 import { taskOptions, ARCHIVE} from "../../utils/helper";
 import Task from "../Task"
+import "./index.scss"
 
 const mapStateToProps = (state:RootState) => ({
   selectedTaskGroup: state.task.selectedTaskGroup,

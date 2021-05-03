@@ -8,6 +8,7 @@ import AddTask from '../AddTask'
 import AddTaskGroup from '../AddTaskGroup'
 import OpenSettings from '../OpenSettings'
 import OpenArchive from '../OpenArchive'
+import "./index.scss"
 
 const mapStateToProps = (state:RootState) => ({
   modalScreen: state.modal.modalScreen,

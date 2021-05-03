@@ -5,6 +5,7 @@ import { RootState } from "../../store";
 import {addTask} from "../../store/taskSlice"
 import {setModal} from "../../store/modalSlice"
 import {getDate, taskOptions} from "../../utils/helper"
+import "./index.scss"
 
 const mapStateToProps = (state:RootState) => ({
   nickname: state.user.nickname,

@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { RootState } from "../../store";
 import {setModal} from '../../store/modalSlice'
 import {updateUserInfo} from '../../store/userSlice'
+import "./index.scss"
 
 const mapStateToProps = (state:RootState) => ({
   nickname: state.user.nickname,
