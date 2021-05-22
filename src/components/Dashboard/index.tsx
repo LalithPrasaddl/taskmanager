@@ -111,6 +111,12 @@ function Dashboard({
     }, {
       key: 'curr_assignee',
       name: 'Assignee',
+    }, {
+      key: 'type',
+      name: 'Type'
+    }, {
+      key: 'finish_date',
+      name: 'Complete By'
     }]
     return (
       <div className="filters-wrapper">
@@ -129,7 +135,7 @@ function Dashboard({
           selFilter &&
           <div className="filters-header border-black">
             {
-              selFilter === 'priority' &&
+              (selFilter === 'priority' || selFilter === 'type') &&
               taskOptions[selFilter].map((item:any) => {
                 const className = item.key === selFilterItem ? "bg-white color-black border-black" : "bg-black color-white border-black"
                 return (
@@ -146,15 +152,53 @@ function Dashboard({
                 )
               })
             }
+            {
+              selFilter === 'finish_date' &&
+              renderDateFilter(selFilter).map((date:string) => {
+                const className = date === selFilterItem ? "bg-white color-black border-black" : "bg-black color-white border-black"
+                const today = new Date()
+                const currDate = new Date(date)
+                let title = 'Future'
+                if(currDate.getFullYear() < today.getFullYear()) {
+                  title = 'Past'
+                } else if(currDate.getFullYear() === today.getFullYear()) {
+                  if(currDate.getMonth() < today.getMonth()) {
+                    title = 'Past'
+                  } else if(currDate.getMonth() === today.getMonth()) {
+                    if(currDate.getDate() < today.getDate()) {
+                      title = 'Past'
+                    } else if(currDate.getDate() === today.getDate()) {
+                      title = 'Today'
+                    }
+                  }
+                }
+                return (
+                  <button className={className} onClick={() => setSelFilterItem(date)} key={'filterType' + date} >{[date, title].join(', ')}</button>
+                )
+              })
+            }
           </div>
         }
       </div>
     )
   }
 
+  function renderDateFilter(selFilter:string) {
+    const allDates:any = []
+    Object.keys(currTasks).map((taskId:string) => {
+      const task = currTasks[taskId]
+      if(allDates.indexOf(task[selFilter]) === -1) {
+        allDates.push(task[selFilter])
+      }
+      return null
+    })
+    console.log(allDates)
+    return allDates.sort()
+  }
+
   if(selectedTaskGroup && currTasks) {
     return (
-      <div className="dashboard-wrapper">
+      <div className="dashboard-wrapper border-white">
         <div className="header bg-black color-white">
           <button
             className="bg-white color-black border-primary add-task"

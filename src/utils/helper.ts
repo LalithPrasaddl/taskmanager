@@ -38,5 +38,5 @@ export const taskOptions:any = {
 
 export function getDate(date: string | number | Date) {
   const d = new Date(date)
-  return d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear()
+  return (d.getMonth() + 1) + '/' +  d.getDate() + '/' + d.getFullYear()
 }

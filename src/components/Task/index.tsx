@@ -69,9 +69,32 @@ export function Task({
   if(page === 'open_archive') {
     className += ' task-item-max'
   }
+  const today = new Date()
+  const currDate = new Date(task.finish_date)
+  let titleClass = ''
+  if(task.status !== 'completed') {
+    if(currDate.getFullYear() < today.getFullYear()) {
+      titleClass = 'bg-red'
+    } else if(currDate.getFullYear() === today.getFullYear()) {
+      if(currDate.getMonth() < today.getMonth()) {
+        titleClass = 'bg-red'
+      } else if(currDate.getMonth() === today.getMonth()) {
+        if(currDate.getDate() < today.getDate()) {
+          titleClass = 'bg-red'
+        } else if(currDate.getDate() === today.getDate()) {
+          titleClass = 'bg-orange'
+        }
+      }
+    }
+  } else if(task.status === 'completed') {
+    if(currDate.getFullYear() === today.getFullYear() && currDate.getMonth() === today.getMonth() && currDate.getDate() === today.getDate()) {
+      titleClass = 'bg-green'
+    }
+  }
+  titleClass += ' bg-primary color-white title border-primary'
   return (
     <div key={taskId} className={className}>
-      <h5 className="bg-primary color-white title border-primary">
+      <h5 className={titleClass}>
         <span>{task.title}</span>
         <span>{task.curr_assignee}</span>
       </h5>
