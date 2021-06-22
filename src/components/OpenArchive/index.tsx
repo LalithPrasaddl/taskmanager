@@ -23,29 +23,44 @@ type OpenArchiveProps = {
 function OpenArchive({
   archiveTasks,
   selectedTaskGroup,
+  setModal
 }:OpenArchiveProps) {
   const tasks  = archiveTasks[selectedTaskGroup]
   return (
     <div className="bg-white open-archive-wrapper">
-      {
-          tasks && Object.keys(tasks).length > 0 &&
-          Object.keys(tasks).map((taskId:string) => {
-          const task:any = tasks[taskId]
-          return (
-            <Task
-              key={taskId}
-              task={task}
-              taskId={taskId}
-              nextTask={null}
-              nextTaskName={'Not Started'}
-              page="open_archive"
-             />
-           )
-        })
-      }
+      <div className="close-btn-wrapper">
+      <button onClick={() => setModal({
+        showModal: false,
+        modalScreen: null
+      })} className="bg-black color-white border-black">Close</button>
+      </div>
+      <div className="archive-task-wrapper">
+        {
+            tasks && Object.keys(tasks).length > 0 &&
+            Object.keys(tasks).map((taskId:string) => {
+            const task:any = tasks[taskId]
+            return (
+              <Task
+                key={taskId}
+                task={task}
+                taskId={taskId}
+                nextTask={null}
+                nextTaskName={'Not Started'}
+                page="open_archive"
+               />
+             )
+          })
+        }
+      </div>
       {
         (!tasks || Object.keys(tasks).length === 0) &&
-        <p className="text-center">No tasks in archive for the selected Task Group</p>
+        <div className="text-center">
+          <h1>No tasks in archive for the selected Task Group</h1>
+          <button onClick={() => setModal({
+            showModal: false,
+            modalScreen: null
+          })} className="bg-black color-white border-black">Close</button>
+        </div>
       }
     </div>
   )

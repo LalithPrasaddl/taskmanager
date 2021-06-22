@@ -106,7 +106,7 @@ export const taskSlice = createSlice({
         state.archiveTasks = {
           ...state.archiveTasks,
           [state.selectedTaskGroup]: {
-            ...state.tasks[state.selectedTaskGroup],
+            ...state.archiveTasks[state.selectedTaskGroup],
             [payload.taskId]: {
               ...currTask,
               status: ARCHIVE
