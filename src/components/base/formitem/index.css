@@ -1,0 +1,18 @@
+.form-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-item label {
+  padding-bottom: 0.5rem;
+}
+
+.form-item input, .form-item select {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+.form-item input:focus, .form-item select:focus {
+  border: 1px solid #4DC9B1; /* App Secondary color */
+}

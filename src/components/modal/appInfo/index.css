@@ -1,0 +1,9 @@
+.app-info-wrapper {
+  margin: 7rem auto;
+  max-width: 500px;
+  padding: 3rem;
+}
+
+.app-info-wrapper li {
+  padding-bottom: .9rem;
+}

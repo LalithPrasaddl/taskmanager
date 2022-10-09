@@ -1,0 +1,10 @@
+.add-projects-wrapper {
+  max-width: 400px;
+  margin: auto;
+  margin-top: 8rem;
+  padding: 3rem 5rem 4rem 5rem;
+}
+
+.add-projects-wrapper .title {
+  padding-bottom: 2rem;
+}

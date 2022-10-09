@@ -1,0 +1,10 @@
+.add-person-wrapper {
+  max-width: 400px;
+  margin: auto;
+  margin-top: 8rem;
+  padding: 3rem 5rem 4rem 5rem;
+}
+
+.add-person-wrapper .title {
+  padding-bottom: 2rem;
+}

@@ -1,0 +1,22 @@
+.task-form {
+  max-width: 600px;
+  margin: 8rem auto 0;
+  padding: 2rem;
+}
+
+.task-title {
+  padding-left: 1rem;
+}
+
+.task-form-wrapper {
+  max-width: 600px;
+  margin: auto;
+  display: inline-block;
+}
+
+.task-form-wrapper .form-item {
+  width: 50%;
+  box-sizing: border-box;
+  float: left;
+  padding: .5rem;
+}

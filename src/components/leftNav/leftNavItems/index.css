@@ -1,0 +1,29 @@
+.left-project-wrapper .project-item {
+  display: flex;
+  padding: .5rem .25rem .5rem 1.5rem;
+  align-items: center;
+  border-radius: 5px;
+  justify-content: space-between;
+}
+
+.left-project-wrapper .project-item .project-item-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.left-project-wrapper .project-item .project-item-content > div {
+  padding-left: .5rem;
+}
+
+.left-project-wrapper .project-item .edit {
+  display: none;
+}
+
+.left-project-wrapper .project-item:hover .edit {
+  display: flex;
+}
+
+.left-project-wrapper .project-item.selected span {
+  color: rgb(255, 255, 255);
+}

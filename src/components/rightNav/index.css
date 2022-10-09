@@ -1,0 +1,45 @@
+.right-nav {
+  flex: 8;
+  margin: 0 0.5rem;
+  box-sizing: border-box;
+}
+
+.right-top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1rem 1rem 1rem;
+  border-width: 0;
+  border-bottom-width: 1px;
+}
+
+.right-button-items-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.right-top-nav input {
+  border-radius: 5px;
+  border-width: 1px;
+  min-width: 250px;
+  padding: 0.5rem;
+  display: none;
+}
+
+.right-top-nav input:focus {
+  border: 1px solid #4DC9B1; /* App Secondary color */
+}
+
+.right-nav-title-wrapper {
+  padding: 1rem;
+}
+
+.right-title-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.right-title-wrapper > div {
+  padding-right: .5rem;
+}

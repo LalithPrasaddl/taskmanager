@@ -1,0 +1,9 @@
+.app-settings-wrapper {
+  margin: 7rem auto;
+  max-width: 500px;
+  padding: 3rem;
+}
+
+.app-settings-wrapper > div {
+  padding-bottom: .9rem;
+}

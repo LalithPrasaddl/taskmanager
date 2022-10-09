@@ -1,0 +1,9 @@
+.form-button-wrapper {
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.form-button-wrapper button {
+  padding: 0.5rem 2rem;
+  border-radius: 5px;
+}
