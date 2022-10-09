@@ -3,10 +3,11 @@ import {data, closeModal} from '../appWrapper';
 import editAddProject from './editAddProject';
 import editAddPerson from "./editAddPerson";
 import editAddTask from "./editAddTask";
-
-import './index.css';
 import appInfo from "./appInfo";
 import appSettings from "./appSettings";
+import appStatistics from "./appStatistics";
+
+import './index.css';
 
 function modal() {
   const modalContent: any = [{
@@ -39,6 +40,10 @@ function modal() {
     if(data.modalOpen === 'app-settings') {
       const appSettingsContent = appSettings();
       modalContent.push(appSettingsContent);
+    }
+    if(data.modalOpen === 'app-statistics') {
+      const appStatisticsContent = appStatistics();
+      modalContent.push(appStatisticsContent);
     }
   }
   const modalDom = {

@@ -17,7 +17,6 @@ function appSettings() {
   }
 }
 
-// TODO: Need to revisit for a better way to reset data.
 function resetAppData(): void {
   const keys = Object.keys(data) as Array<keyof Data>;
   for (let i = 0; i < keys.length; i++) {

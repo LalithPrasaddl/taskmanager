@@ -23,7 +23,7 @@ type Person = {
   icon: string;
 }
 
-type ModalOpen = '' | 'add-project' | 'add-person' | 'edit-project' | 'edit-person' | 'add-task' | 'edit-task' | 'app-info' | 'app-settings';
+type ModalOpen = '' | 'add-project' | 'add-person' | 'edit-project' | 'edit-person' | 'add-task' | 'edit-task' | 'app-info' | 'app-settings' | 'app-statistics';
 
 type TaskType = {
   id: number;

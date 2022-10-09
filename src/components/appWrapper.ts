@@ -59,7 +59,7 @@ export let data: Data = {
   tasks: []
 }
 
-const sessionData = window.sessionStorage.getItem('data')
+const sessionData = window.localStorage.getItem('data')
 if(sessionData) {
   const savedData = JSON.parse(sessionData)
   if(savedData) {
@@ -71,7 +71,7 @@ if(sessionData) {
 
 //when the window is closed
 window.addEventListener("unload", function() {
-  window.sessionStorage.setItem('data', JSON.stringify(data));
+  window.localStorage.setItem('data', JSON.stringify(data));
 })
 
 document.addEventListener('keyup', function(e) {

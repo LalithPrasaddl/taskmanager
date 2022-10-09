@@ -50,7 +50,7 @@ export const taskFormFields = [{
   type: 'text',
   id: 'desc'
 }, {
-  label: 'Asignee',
+  label: 'Assignee',
   type: 'select',
   id: 'assignee'
 }, {

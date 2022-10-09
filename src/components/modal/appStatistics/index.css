@@ -1,0 +1,27 @@
+.app-statistics-wrapper {
+  margin: 7rem auto;
+  max-width: 500px;
+  padding: 3rem;
+}
+
+.app-statistics-wrapper .title {
+  padding-bottom: 1rem;
+}
+
+.summary-person {
+  padding-left: 1rem;
+  border-width: 0;
+  border-bottom-width: 1px;
+  margin-bottom: 1rem;
+}
+
+.summary-person-title {
+  padding-top: .5rem;
+  padding-left: 1rem;
+}
+
+.summary-no-tasks {
+  padding-top: .5rem;
+  padding-left: 1rem;
+  padding-bottom: .75rem;
+}

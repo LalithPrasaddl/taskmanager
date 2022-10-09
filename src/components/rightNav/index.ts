@@ -27,6 +27,40 @@ function rightNav(): HTMLElement | null {
         }
       })
   }
+  const rightNavBtns: {key: string, icon: string, modalOpen: ModalOpen}[] = [{
+    key: 'info',
+    icon: 'info',
+    modalOpen: 'app-info'
+  }, {
+    key: 'statistics',
+    icon: 'equalizer',
+    modalOpen: 'app-statistics'
+  }, {
+    key: 'settings',
+    icon: 'settings',
+    modalOpen: 'app-settings'
+  }]
+  const righNavChildItems: any[] = [{
+    type: 'input',
+    elmAttrs: {
+      placeholder: 'Search'
+    },
+  }];
+  for (let i = 0; i < rightNavBtns.length; i++) {
+      const btn = rightNavBtns[i];
+      righNavChildItems.push({
+        type: 'button',
+        elmAttrs: {
+          onclick: () => {
+            data.modalOpen = btn.modalOpen;
+            renderContent();
+          }
+        },
+        childElms: [
+          getMaterialIcon(btn.icon),
+        ]
+      })
+  }
   const rightNavDom = {
     type: 'div',
     elmAttrs: {
@@ -52,34 +86,7 @@ function rightNav(): HTMLElement | null {
         elmAttrs: {
           className: 'right-button-items-wrapper'
         },
-        childElms: [{
-          type: 'input',
-          elmAttrs: {
-            placeholder: 'Search'
-          },
-        }, {
-          type: 'button',
-          elmAttrs: {
-            onclick: () => {
-              data.modalOpen = 'app-info';
-              renderContent();
-            }
-          },
-          childElms: [
-            getMaterialIcon('info'),
-          ]
-        }, {
-          type: 'button',
-          elmAttrs: {
-            onclick: () => {
-              data.modalOpen = 'app-settings';
-              renderContent();
-            }
-          },
-          childElms: [
-            getMaterialIcon('settings')
-          ]
-        }]
+        childElms: righNavChildItems
       }]
     }, taskItems()]
   }
